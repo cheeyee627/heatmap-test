@@ -67,7 +67,7 @@
 
             // Bind onbeforeunload Event
             window.onbeforeunload = function (e) {
-                console.log(this.session)
+
                 return "You have some unsaved changes";
                 // tracker.sdk.ajax("heatmap", "hit", "add", this.session, function () {
 
@@ -169,6 +169,7 @@
         },
         sdk: {
             ajax: function (sdkName, sub, act, reqBody, complete) {
+                reqBody = this.session;
                 let isEmptyObj = $.isEmptyObject(reqBody),
                     opts,
                     retVal;
