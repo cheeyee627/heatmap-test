@@ -67,8 +67,7 @@
 
             // Bind onbeforeunload Event
             window.onbeforeunload = function (e) {
-                let try123;
-                tracker.sdk.ajax("heatmap", "hit", "add", try123, function () {
+                tracker.sdk.ajax("heatmap", "hit", "add", this.dataTracker, function () {
 
                 });
                 return "You have some unsaved changes";
@@ -115,6 +114,7 @@
             if (tracker.debug) {
                 // Close Session & Log to Console
                 tracker.closeSession();
+                console.log(this)
                 console.log("Session:\n", tracker.session);
             }
 
@@ -165,13 +165,12 @@
                 outerWidth: window.outerWidth,
                 outerHeight: window.outerHeight
             };
-
+            window.dataTracker = tracker;
             return tracker;
         },
         sdk: {
             ajax: function (sdkName, sub, act, reqBody, complete) {
-                reqBody = this.session;
-                console.log(reqBody);
+                console.log(reqBody)
                 let isEmptyObj = $.isEmptyObject(reqBody),
                     opts,
                     retVal;
