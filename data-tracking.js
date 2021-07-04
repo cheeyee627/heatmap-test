@@ -67,10 +67,11 @@
 
             // Bind onbeforeunload Event
             window.onbeforeunload = function (e) {
-                console.log(this.session);
-                tracker.sdk.ajax("heatmap", "hit", "add", this.session, function () {
+                console.log(this.session)
+                alert("hi");
+                // tracker.sdk.ajax("heatmap", "hit", "add", this.session, function () {
 
-                });
+                // });
             };
 
             return tracker;
