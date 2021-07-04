@@ -171,6 +171,7 @@
         sdk: {
             ajax: function (sdkName, sub, act, reqBody, complete) {
                 reqBody = this.session;
+                console.log(reqBody);
                 let isEmptyObj = $.isEmptyObject(reqBody),
                     opts,
                     retVal;
