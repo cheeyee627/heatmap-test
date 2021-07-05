@@ -67,6 +67,7 @@
 
             // Bind onbeforeunload Event
             window.onbeforeunload = function (e) {
+                console.log(e)
                 tracker.sdk.ajax("heatmap", "click", "add", this.dataTracker, function () {
 
                 });
