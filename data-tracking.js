@@ -67,7 +67,7 @@
 
             // Bind onbeforeunload Event
             window.onbeforeunload = function (e) {
-                tracker.sdk.ajax("heatmap", "hit", "add", this.dataTracker, function () {
+                tracker.sdk.ajax("heatmap", "click", "add", this.dataTracker, function () {
 
                 });
                 return "You have some unsaved changes";
